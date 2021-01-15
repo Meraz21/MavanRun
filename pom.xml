@@ -82,36 +82,69 @@
 
 		<!--*************** NEW ADDED**************** -->
 		<!-- https://mvnrepository.com/artifact/org.apache.maven.surefire/surefire-logger-api -->
-		
+
 		<!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
 		<!-- https://mvnrepository.com/artifact/org.apache.maven/maven-plugin-api -->
-		
+
 		<!--*************** NEW ADDED**************** -->
+
+
+		<dependency>
+			<groupId>org.apache.maven.resolver</groupId>
+			<artifactId>maven-resolver-transport-file</artifactId>
+			<version>1.4.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.resolver</groupId>
+			<artifactId>maven-resolver-transport-wagon</artifactId>
+			<version>1.4.1</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 	<build>
-	<plugins>
-  
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.0.0-M5</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>${TestNG_File}</suiteXmlFile>  <!-- Single test no param <suiteXmlFile>sanity.xml</suiteXmlFile>  -->
-            
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
+		<plugins>
 
-</plugins>
-	</build>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>${TestNG_File}</suiteXmlFile> <!-- suiteXmlFile>sanity.xml</suiteXmlFile> -->
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build> 
 	
-</project>
-<!-- Once This message is occured then need to customized this link " <suiteXmlFile> test2.xml <suiteXmlFile> " and add reguler expression followed:
+	<!-- <build>
+		<plugins>
 
-	" <suiteXmlFile>  ${ any name / testNG file name }<suiteXmlFile> " after save it and go to terminal and use this command :
-	type: '''''' mvn clean test -D+testNG_file_name=actual file which want to be execute.xml  
-	eg: mvn clean test  -DTestNG_File=smock.xml''''''
-	[ERROR] Please refer to /Users/khosruzzaman/Downloads/MultiCartOnline/target/surefire-reports for the individual test results.
-	[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream. -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M5</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>${TestNG_File}</suiteXmlFile>  Single test no param <suiteXmlFile>sanity.xml</suiteXmlFile>
+
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build> -->
+
+</project>
+<!-- Once This message is occured then need to customized this link " <suiteXmlFile> 
+	test2.xml <suiteXmlFile> " and add reguler expression followed: " <suiteXmlFile> 
+	${ any name / testNG file name }<suiteXmlFile> " after save it and go to 
+	terminal and use this command : type: '''''' mvn clean test -D+testNG_file_name=actual 
+	file which want to be execute.xml eg: mvn clean test -DTestNG_File=smock.xml'''''' 
+	[ERROR] Please refer to /Users/khosruzzaman/Downloads/MultiCartOnline/target/surefire-reports 
+	for the individual test results. [ERROR] Please refer to dump files (if any 
+	exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream. -->
 	
